@@ -68,7 +68,7 @@
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(118, 0);
+            this.btnReload.Location = new System.Drawing.Point(153, 0);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(75, 23);
             this.btnReload.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(195, 0);
+            this.btnExit.Location = new System.Drawing.Point(234, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 2;
@@ -103,9 +103,9 @@
             this.chkLog.AutoSize = true;
             this.chkLog.Location = new System.Drawing.Point(68, 3);
             this.chkLog.Name = "chkLog";
-            this.chkLog.Size = new System.Drawing.Size(44, 17);
+            this.chkLog.Size = new System.Drawing.Size(79, 17);
             this.chkLog.TabIndex = 0;
-            this.chkLog.Text = "Log";
+            this.chkLog.Text = "Debug Log";
             this.chkLog.UseVisualStyleBackColor = true;
             // 
             // notifyIcon1

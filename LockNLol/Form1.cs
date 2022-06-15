@@ -119,11 +119,16 @@ namespace locknlol
             // \\?\USB#VID_2109&PID_8887#40AN
             // 446c009&0&Yubico_YubiKey
 
-            if (removed && chkEnabled.Checked) {
+            if (removed) {
                 foreach(string lockDev in lockDevices)
                 {
-                    if (Regex.IsMatch(devName, lockDev))
-                        LockWorkStation();
+                    if (Regex.IsMatch(devName, lockDev)) {
+                        WriteLog($"+ \"{devName}\" matches /{lockDev}/");
+                        if(chkEnabled.Checked)
+                            LockWorkStation();
+                    }
+                    else
+                        WriteLog($"- \"{devName}\" doesn't match /{lockDev}/");
                 }
             } 
 
@@ -147,13 +152,15 @@ namespace locknlol
             }
         }
 
+        void WriteLog(string Message) { 
+            textBox1.AppendText(Message + Environment.NewLine);
+        }
+
         void Write(string Message)
         {
             if(chkLog.Checked)
-                textBox1.AppendText(Message + Environment.NewLine);
+                WriteLog(Message);
         }
-
-
 
         private void notifyIcon1_DoubleClick(object sender, EventArgs e)
         {
